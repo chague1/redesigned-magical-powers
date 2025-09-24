@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'button/macro.njk' import button %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      },
+      {
+        href: "#",
+        text: "Section"
+      }
+    ],
+    href: "#",
+    text: "Subsection"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Order a test to check if you have magical powers</h1>
+      
+      <p>Use this service to order a test to check if you have magical powers.</p>
+
+      <p>You can use this service if you are:</p>
+      <ul>
+        <li>human</li>
+        <li>18 years or over</li>
+        <li>showing symptoms of magical powers</li>
+       </ul>
+
+      <p>You can also order this test if you are not showing symptoms of magical powers, but one or both of your biological parents are magical.</p>
+
+      <h2>Before you start</h2>
+
+      <p>We'll ask you for:</p>
+      <ul>
+        <li>details of your symptoms</li>
+        <li>your address (if you are eligible to receive a test)</li>
+
+        {% from 'warning-callout/macro.njk' import warningCallout %}
+
+      {{ warningCallout({
+           heading: "Important",
+          text: "Call 777 and ask for help from your local magical director (MD) if you are worried you have cast a spell that will do harm to yourself or others."
+      }) }}
+
+      {{ button({
+        text: "Start now",
+        href: "/human"
+      }) }}
+
+      <p>By using this service you are agreeing to our <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</p>
+
+    </div>
+  </div>
+{% endblock %}
