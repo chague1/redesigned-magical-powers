@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
   {{ backLink({
-    href: "/start-page",
+    href: "/human",
     text: "Back"
   }) }}
 {% endblock %}
@@ -16,35 +16,29 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/age" method="post" novalidate>
+      <form action="/parents" method="post" novalidate>
 
 {{ radios({
-  idPrefix: "example-hints",
-  name: "example-hints",
+  idPrefix: "example-inline",
+  name: "example-inline",
+  classes: "nhsuk-radios--inline",
   fieldset: {
     legend: {
-      text: "Are you human?",
+      text: "Are you 18 or over?",
       classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
   },
-  hint: {
-    text: "Warlocks, fairies, werewolves and other mystical creatures are not eligible for a test."
-  },
   items: [
-  {
-    value: "yes",
-    text: "Yes"
-  },
-  {
-    value: "no",
-    text: "No"
-  },
-  {
-    value: "not sure",
-    text: "I'm not sure"
-  }
-]
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
 }) }}
 
 {% from 'radios/macro.njk' import radios %}
