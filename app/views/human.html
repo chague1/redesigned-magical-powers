@@ -16,11 +16,11 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/age" method="post" novalidate>
+      <form action="/human-answer" method="post" novalidate>
 
 {{ radios({
-  idPrefix: "example-hints",
-  name: "example-hints",
+  idPrefix: "humanAnswer",
+  name: "humanAnswer",
   fieldset: {
     legend: {
       text: "Are you human?",
@@ -31,6 +31,7 @@
   hint: {
     text: "Warlocks, fairies, werewolves and other mystical creatures are not eligible for a test."
   },
+  value: data.humanAnswer,
   items: [
   {
     value: "yes",
